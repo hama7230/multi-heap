@@ -6,15 +6,15 @@ from TokyoWesterns CTF 2019
 * libc.so.6
 
 ## intended solution
-my intended solution use an exploitation technique as known as  _wild copy_.
+My intended solution use an exploitation technique as known as  _wild copy_.
 _wild copy_ was proposed by Google Project Zero.
-original blog post is [here](https://googleprojectzero.blogspot.com/2015/03/taming-wild-copy-parallel-thread.html).
+Original blog post is [here](https://googleprojectzero.blogspot.com/2015/03/taming-wild-copy-parallel-thread.html).
 
-you can input negative integer as a size for copy function because of no checking for it.
-a memory copy that the copy size is negative become huge heap overflow and cause a segmentation fault.
-if you can use some data on memory before causing the segmentation fault, this heap overflow can be used for exploit.
-this challenge was written by C++, so there is a pointer of vtable on heap segment.
-you can overwrite the pointer by _wild copy_ then control rip.
+You can input negative integer as a size for copy function because of no checking for it.
+A memory copy that the copy size is negative become huge heap overflow and cause a segmentation fault.
+If you can use some data on memory before causing the segmentation fault, this heap overflow can be used for exploit.
+This challenge was written by C++, so there is a pointer of vtable on heap segment.
+You can overwrite the pointer by _wild copy_ then control rip.
 
 
 Of course, I heard that unintended solution exists.
